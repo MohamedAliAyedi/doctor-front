@@ -24,7 +24,12 @@ const menuItems = [
     active: true,
   },
   { icon: MessageSquare, label: "Chats", href: "/dashboard/chats", badge: "3" },
-  { icon: Users, label: "Patient management", href: "/dashboard/patients" },
+  {
+    icon: Users,
+    label: "Patient management",
+    href: "/dashboard/patients",
+    active: false,
+  },
   { icon: Calendar, label: "Appointments", href: "/dashboard/appointments" },
   {
     icon: UserCheck,
