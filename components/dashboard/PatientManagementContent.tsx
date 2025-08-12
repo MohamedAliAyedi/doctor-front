@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { useRouter } from "next/navigation";
 
 const patientData = [
   {
@@ -187,8 +188,13 @@ const getPaymentBadge = (status: string) => {
       );
   }
 };
-
 export function PatientManagementContent() {
+  const router = useRouter();
+
+  const handlePatientClick = (id: number) => {
+    router.push(`/consultation/${id}`);
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -301,7 +307,8 @@ export function PatientManagementContent() {
           {patientData.map((patient) => (
             <div
               key={patient.id}
-              className="grid grid-cols-7 gap-4 py-4 px-4 bg-white rounded-lg hover:bg-gray-50 transition-colors items-center"
+              onClick={() => handlePatientClick(patient.id)}
+              className="grid grid-cols-7 gap-4 py-4 px-4 bg-white rounded-lg hover:bg-gray-50 transition-colors items-center cursor-pointer"
             >
               {/* Patient */}
               <div className="flex items-center space-x-3">
