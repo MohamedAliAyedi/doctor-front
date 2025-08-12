@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { PrescriptionModal } from "./PrescriptionModal";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -37,21 +37,16 @@ const symptoms = [
 ];
 
 export function ConsultationPatientContent() {
+  const router = useRouter();
   const [labAnalysis, setLabAnalysis] = useState("");
   const [xRayToDo, setXRayToDo] = useState("");
   const [bodyParts, setBodyParts] = useState("");
   const [referToDoctor, setReferToDoctor] = useState("");
   const [messageForDoctor, setMessageForDoctor] = useState("");
   const [report, setReport] = useState("");
-  const [isPrescriptionModalOpen, setIsPrescriptionModalOpen] = useState(false);
 
   const handleCreatePrescription = () => {
-    setIsPrescriptionModalOpen(true);
-  };
-
-  const handleSavePrescription = (medications: any[]) => {
-    console.log("Prescription saved:", medications);
-    // Handle saving prescription logic here
+    router.push('/prescription/new');
   };
 
   return (
@@ -254,13 +249,6 @@ export function ConsultationPatientContent() {
           </Button>
         </div>
       </div>
-
-      {/* Prescription Modal */}
-      <PrescriptionModal
-        isOpen={isPrescriptionModalOpen}
-        onClose={() => setIsPrescriptionModalOpen(false)}
-        onSave={handleSavePrescription}
-      />
     </div>
   );
 }
