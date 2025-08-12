@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PrescriptionModal } from "./PrescriptionModal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -42,6 +43,16 @@ export function ConsultationPatientContent() {
   const [referToDoctor, setReferToDoctor] = useState("");
   const [messageForDoctor, setMessageForDoctor] = useState("");
   const [report, setReport] = useState("");
+  const [isPrescriptionModalOpen, setIsPrescriptionModalOpen] = useState(false);
+
+  const handleCreatePrescription = () => {
+    setIsPrescriptionModalOpen(true);
+  };
+
+  const handleSavePrescription = (medications: any[]) => {
+    console.log("Prescription saved:", medications);
+    // Handle saving prescription logic here
+  };
 
   return (
     <div className="space-y-6">
@@ -234,12 +245,22 @@ export function ConsultationPatientContent() {
               <span>Refer to a doctor</span>
             </Button>
           </div>
-          <Button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center space-x-2">
+          <Button 
+            onClick={handleCreatePrescription}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center space-x-2"
+          >
             <span>Create prescription</span>
             <ExternalLink className="w-4 h-4" />
           </Button>
         </div>
       </div>
+
+      {/* Prescription Modal */}
+      <PrescriptionModal
+        isOpen={isPrescriptionModalOpen}
+        onClose={() => setIsPrescriptionModalOpen(false)}
+        onSave={handleSavePrescription}
+      />
     </div>
   );
 }
