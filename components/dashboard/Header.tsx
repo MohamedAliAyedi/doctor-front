@@ -4,8 +4,14 @@ import { Search, Bell, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useRouter } from "next/navigation";
 
 export function Header() {
+  const router = useRouter();
+
+  const handleNotificationClick = () => {
+    router.push(`/notifications`);
+  };
   return (
     <header className="bg-white/50 backdrop-blur-sm px-6 py-4 shadow-sm rounded-xl border-2 border-gray-50 m-3">
       {" "}
@@ -26,6 +32,7 @@ export function Header() {
             variant="ghost"
             size="sm"
             className="relative bg-white rounded-3xl"
+            onClick={handleNotificationClick}
           >
             <Bell className="w-5 h-5 text-secondary" />
           </Button>

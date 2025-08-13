@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PrescriptionModal } from "./PrescriptionModal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,6 +15,7 @@ import {
   Sparkles,
   Settings,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const symptoms = [
   { name: "Fever", color: "bg-blue-500" },
@@ -42,6 +44,21 @@ export function ConsultationPatientContent() {
   const [referToDoctor, setReferToDoctor] = useState("");
   const [messageForDoctor, setMessageForDoctor] = useState("");
   const [report, setReport] = useState("");
+  const [isPrescriptionModalOpen, setIsPrescriptionModalOpen] = useState(false);
+  const router = useRouter();
+
+  const handleCreatePrescription = () => {
+    setIsPrescriptionModalOpen(true);
+  };
+
+  const handleReportClick = (id: number) => {
+    router.push(`/consultation/report/${id}`);
+  };
+
+  const handleSavePrescription = (medications: any[]) => {
+    console.log("Prescription saved:", medications);
+    // Handle saving prescription logic here
+  };
 
   return (
     <div className="space-y-6">
@@ -96,7 +113,10 @@ export function ConsultationPatientContent() {
             >
               <Download className="w-4 h-4 text-blue-500" />
             </Button>
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg flex items-center space-x-2">
+            <Button
+              className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg flex items-center space-x-2"
+              onClick={() => router.push("/medical-record/1")}
+            >
               <span>Medical record</span>
               <ExternalLink className="w-4 h-4" />
             </Button>
@@ -222,6 +242,7 @@ export function ConsultationPatientContent() {
             <Button
               variant="outline"
               className="bg-white border-gray-200 hover:bg-gray-50 rounded-lg px-6 py-3 flex items-center space-x-2"
+              onClick={() => handleReportClick(1)}
             >
               <Sparkles className="w-4 h-4 text-blue-500" />
               <span>Generate a report</span>
@@ -234,12 +255,22 @@ export function ConsultationPatientContent() {
               <span>Refer to a doctor</span>
             </Button>
           </div>
-          <Button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center space-x-2">
+          <Button
+            onClick={handleCreatePrescription}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center space-x-2"
+          >
             <span>Create prescription</span>
             <ExternalLink className="w-4 h-4" />
           </Button>
         </div>
       </div>
+
+      {/* Prescription Modal */}
+      <PrescriptionModal
+        isOpen={isPrescriptionModalOpen}
+        onClose={() => setIsPrescriptionModalOpen(false)}
+        onSave={handleSavePrescription}
+      />
     </div>
   );
 }

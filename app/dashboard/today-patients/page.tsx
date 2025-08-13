@@ -3,7 +3,7 @@
 import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 import { PatientManagementContent } from "@/components/dashboard/PatientManagementContent";
 
-export default function PatientsPage() {
+export default function TodayPatientsPage() {
   return (
     <DashboardLayout>
       <PatientManagementContent />

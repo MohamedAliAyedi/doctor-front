@@ -13,6 +13,9 @@ import {
   Smartphone,
   Settings,
   Phone,
+  Bell,
+  UserPlus,
+  UserCheck2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -23,11 +26,22 @@ const menuItems = [
     href: "/dashboard",
     active: true,
   },
-  { icon: MessageSquare, label: "Chats", href: "/dashboard/chats", badge: "3" },
+  { icon: MessageSquare, label: "Chats", href: "/chat", badge: "3" },
+  {
+    icon: UserPlus,
+    label: "Invitation requests",
+    href: "/invitations",
+  },
+  {
+    icon: UserCheck2,
+    label: "Today Patients",
+    href: "/dashboard/today-patients",
+    active: false,
+  },
   {
     icon: Users,
     label: "Patient management",
-    href: "/dashboard/patients",
+    href: "/dashboard/patients-list",
     active: false,
   },
   { icon: Calendar, label: "Appointments", href: "/dashboard/appointments" },
