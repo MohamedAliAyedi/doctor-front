@@ -192,7 +192,9 @@ export function PatientManagementContent() {
   const router = useRouter();
 
   const handlePatientClick = (id: number) => {
-    router.push(`/consultation/${id}`);
+    // Check if we want to go to consultation or patient profile
+    // For now, let's add both options - you can modify this logic as needed
+    router.push(`/patient-profile/${id}`);
   };
 
   return (

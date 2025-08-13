@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { NewPatientModal } from "./NewPatientModal";
+import { useRouter } from "next/navigation";
 
 const patientData = [
   {
@@ -112,7 +113,12 @@ const patientData = [
 ];
 
 export function PatientListContent() {
+  const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlePatientClick = (id: number) => {
+    router.push(`/patient-profile/${id}`);
+  };
 
   return (
     <div className="space-y-6">
@@ -202,6 +208,7 @@ export function PatientListContent() {
           {patientData.map((patient) => (
             <div
               key={patient.id}
+              onClick={() => handlePatientClick(patient.id)}
               className="grid grid-cols-5 gap-4 py-4 px-4 bg-white rounded-lg hover:bg-gray-50 transition-colors items-center cursor-pointer"
             >
               {/* Patient */}
