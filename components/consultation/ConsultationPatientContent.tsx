@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { PrescriptionModal } from "./PrescriptionModal";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,7 +16,6 @@ import {
   Sparkles,
   Settings,
 } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 const symptoms = [
   { name: "Fever", color: "bg-blue-500" },
@@ -38,6 +38,7 @@ const symptoms = [
 ];
 
 export function ConsultationPatientContent() {
+  const router = useRouter();
   const [labAnalysis, setLabAnalysis] = useState("");
   const [xRayToDo, setXRayToDo] = useState("");
   const [bodyParts, setBodyParts] = useState("");
@@ -45,7 +46,6 @@ export function ConsultationPatientContent() {
   const [messageForDoctor, setMessageForDoctor] = useState("");
   const [report, setReport] = useState("");
   const [isPrescriptionModalOpen, setIsPrescriptionModalOpen] = useState(false);
-  const router = useRouter();
 
   const handleCreatePrescription = () => {
     setIsPrescriptionModalOpen(true);
