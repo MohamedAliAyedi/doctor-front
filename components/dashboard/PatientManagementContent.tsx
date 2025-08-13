@@ -1,4 +1,72 @@
+"use client";
 
+import { useState } from "react";
+import { Search, ChevronDown, Calendar, Users, Heart } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { useRouter } from "next/navigation";
+
+const patientData = [
+  {
+    id: 1,
+    name: "Marwen Said",
+    avatar:
+      "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face",
+    time: "12:24 pm",
+    date: "22 Jan 2024",
+    lastVisit: "22 Jan 2024",
+    reason: "Headache",
+    status: "Waiting",
+    paymentStatus: "Paid",
+  },
+  {
+    id: 2,
+    name: "Mariem Raali",
+    avatar:
+      "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face",
+    time: "12:24 pm",
+    date: "20 Jan 2024",
+    lastVisit: "20 Jan 2024",
+    reason: "Headache",
+    status: "Waiting",
+    paymentStatus: "Unpaid",
+  },
+  {
+    id: 3,
+    name: "Ahmed Bourat",
+    avatar:
+      "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face",
+    time: "12:24 pm",
+    date: "24 Jan 2024",
+    lastVisit: "24 Jan 2024",
+    reason: "Headache",
+    status: "Booked",
+    paymentStatus: "Paid",
+  },
+  {
+    id: 4,
+    name: "Hassen Louati",
+    avatar:
+      "https://images.pexels.com/photos/5452274/pexels-photo-5452274.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face",
+    time: "12:24 pm",
+    date: "26 Jan 2024",
+    lastVisit: "26 Jan 2024",
+    reason: "Headache",
+    status: "Waiting",
+    paymentStatus: "Unpaid",
+  },
+  {
+    id: 5,
+    name: "Laila Hamza",
+    avatar:
+      "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face",
+    time: "12:24 pm",
+    date: "18 Jan 2024",
+    lastVisit: "18 Jan 2024",
+    reason: "Headache",
+    status: "In consultation",
     paymentStatus: "Paid",
   },
   {
@@ -124,9 +192,7 @@ export function PatientManagementContent() {
   const router = useRouter();
 
   const handlePatientClick = (id: number) => {
-    // Check if we want to go to consultation or patient profile
-    // For now, let's add both options - you can modify this logic as needed
-    router.push(`/patient-profile/${id}`);
+    router.push(`/consultation/${id}`);
   };
 
   return (
