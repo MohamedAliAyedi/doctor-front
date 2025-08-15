@@ -51,7 +51,7 @@ const menuItems = [
     href: "/dashboard/patients-list",
     active: false,
   },
-  { icon: Calendar, label: "Appointments", href: "/dashboard/appointments" },
+  { icon: Calendar, label: "Appointments", href: "/appointments" },
   {
     icon: UserCheck,
     label: "Secretary management",
