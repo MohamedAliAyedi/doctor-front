@@ -180,6 +180,10 @@ export function MedicalRecordContent() {
     router.push("/medical-record/xray-list/1");
   };
 
+  const handleBloodTestClick = () => {
+    router.push("/medical-record/blood-list/1");
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -415,7 +419,13 @@ export function MedicalRecordContent() {
           {diagnosticReports.map((report) => (
             <div
               key={report.id}
-              onClick={report.id === 3 ? handleXRayClick : undefined}
+              onClick={
+                report.id === 3
+                  ? handleXRayClick
+                  : report.id === 1
+                  ? handleBloodTestClick
+                  : undefined
+              }
               className={`${report.bgColor} rounded-2xl p-6 text-white relative overflow-hidden`}
             >
               <div className="relative z-10">
@@ -428,7 +438,13 @@ export function MedicalRecordContent() {
                 <p className="text-sm text-white/90 mb-4">{report.subtitle}</p>
                 <Button
                   variant="ghost"
-                  onClick={report.id === 3 ? handleXRayClick : undefined}
+                  onClick={
+                    report.id === 3
+                      ? handleXRayClick
+                      : report.id === 1
+                      ? handleBloodTestClick
+                      : undefined
+                  }
                   className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full p-0 text-white"
                 >
                   <ArrowRight className="w-5 h-5" />

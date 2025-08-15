@@ -16,6 +16,7 @@ import {
   Bell,
   UserPlus,
   UserCheck2,
+  UserCog2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -31,6 +32,12 @@ const menuItems = [
     icon: UserPlus,
     label: "Invitation requests",
     href: "/invitations",
+  },
+  {
+    icon: UserCog2,
+    label: "Connect to My patient",
+    href: "/connect-patient",
+    active: false,
   },
   {
     icon: UserCheck2,
