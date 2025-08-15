@@ -1,7 +1,7 @@
 "use client";
 
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
-import { SecretaryManagementContent } from "@/components/secretary/SecretaryManagementContent";
+import { DashboardLayout } from "@/components/doctor/dashboard/DashboardLayout";
+import { SecretaryManagementContent } from "@/components/doctor/secretary/SecretaryManagementContent";
 
 export default function SecretaryManagementPage() {
   return (

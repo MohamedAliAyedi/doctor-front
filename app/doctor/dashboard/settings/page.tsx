@@ -1,12 +1,12 @@
 "use client";
 
 import { DashboardLayout } from "@/components/doctor/dashboard/DashboardLayout";
-import { BillingContent } from "@/components/doctor/billing/BillingContent";
+import { SettingsContent } from "@/components/doctor/settings/SettingsContent";
 
-export default function BillingPage() {
+export default function SettingsPage() {
   return (
     <DashboardLayout>
-      <BillingContent />
+      <SettingsContent />
     </DashboardLayout>
   );
 }

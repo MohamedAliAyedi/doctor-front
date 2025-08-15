@@ -1,7 +1,7 @@
 "use client";
 
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
-import { ConsultationHistoryContent } from "@/components/consultation-history/ConsultationHistoryContent";
+import { DashboardLayout } from "@/components/doctor/dashboard/DashboardLayout";
+import { ConsultationHistoryContent } from "@/components/doctor/consultation-history/ConsultationHistoryContent";
 
 export default function ConsultationHistoryPage() {
   return (

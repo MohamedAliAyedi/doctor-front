@@ -1,7 +1,7 @@
 "use client";
 
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
-import { BillingListContent } from "@/components/billing/BillingListContent";
+import { DashboardLayout } from "@/components/doctor/dashboard/DashboardLayout";
+import { BillingListContent } from "@/components/doctor/billing/BillingListContent";
 
 export default function BillingListPage() {
   return (

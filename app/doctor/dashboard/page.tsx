@@ -1,8 +1,8 @@
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
-import { WelcomeMessage } from '@/components/dashboard/WelcomeMessage';
-import { StatsCards } from '@/components/dashboard/StatsCards';
-import { PatientStatistic } from '@/components/dashboard/PatientStatistic';
-import { BottomSection } from '@/components/dashboard/BottomSection';
+import { DashboardLayout } from "@/components/doctor/dashboard/DashboardLayout";
+import { WelcomeMessage } from "@/components/doctor/dashboard/WelcomeMessage";
+import { StatsCards } from "@/components/doctor/dashboard/StatsCards";
+import { PatientStatistic } from "@/components/doctor/dashboard/PatientStatistic";
+import { BottomSection } from "@/components/doctor/dashboard/BottomSection";
 
 export default function Dashboard() {
   return (
