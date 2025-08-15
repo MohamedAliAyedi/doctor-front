@@ -120,7 +120,7 @@ export function SecretaryManagementContent() {
   };
 
   const handleEdit = (id: number) => {
-    router.push(`/dashboard/secretary/profile/${id}`);
+    router.push(`/doctor/dashboard/secretary/profile/${id}`);
   };
 
   return (

@@ -192,7 +192,7 @@ export function PatientManagementContent() {
   const router = useRouter();
 
   const handlePatientClick = (id: number) => {
-    router.push(`/consultation/${id}`);
+    router.push(`/doctor/consultation/${id}`);
   };
 
   return (

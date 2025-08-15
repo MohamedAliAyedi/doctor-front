@@ -117,7 +117,7 @@ export function PatientListContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handlePatientClick = (id: number) => {
-    router.push(`/dashboard/patient-profile/${id}`);
+    router.push(`/doctor/dashboard/patient-profile/${id}`);
   };
 
   return (

@@ -38,13 +38,13 @@ const menuItems: MenuItem[] = [
   {
     icon: LayoutDashboard,
     label: "Overview",
-    href: "/dashboard",
+    href: "/doctor/dashboard",
     active: true,
   },
   {
     icon: MessageSquare,
     label: "History consultation",
-    href: "/dashboard/consultation-history",
+    href: "/doctor/dashboard/consultation-history",
   },
   {
     icon: Users,
@@ -53,34 +53,34 @@ const menuItems: MenuItem[] = [
       {
         icon: UserCheck2,
         label: "Today’s Patients",
-        href: "/dashboard/today-patients",
+        href: "/doctor/dashboard/today-patients",
       },
       {
         icon: Users,
         label: "Patient’s List",
-        href: "/dashboard/patients-list",
+        href: "/doctor/dashboard/patients-list",
       },
       {
         icon: UserPlus,
         label: "Invitation requests",
-        href: "/invitations",
+        href: "/doctor/invitations",
       },
       {
         icon: UserCog2,
         label: "Connect to patient",
-        href: "/connect-patient",
+        href: "/doctor/connect-patient",
       },
     ],
   },
   {
     icon: Calendar,
     label: "Appointments",
-    href: "/appointments",
+    href: "/doctor/appointments",
   },
   {
     icon: UserCheck,
     label: "Secretary management",
-    href: "/dashboard/secretary",
+    href: "/doctor/dashboard/secretary",
   },
   {
     icon: CreditCard,
@@ -89,12 +89,12 @@ const menuItems: MenuItem[] = [
       {
         icon: CircleDollarSign,
         label: "Bills Overview",
-        href: "/dashboard/billing",
+        href: "/doctor/dashboard/billing",
       },
       {
         icon: Signature,
         label: "Bills List",
-        href: "/dashboard/billing-list",
+        href: "/doctor/dashboard/billing-list",
       },
     ],
     // href: "/dashboard/billing",
@@ -102,12 +102,12 @@ const menuItems: MenuItem[] = [
   {
     icon: Smartphone,
     label: "Application",
-    href: "/dashboard/application",
+    href: "/doctor/dashboard/application",
   },
   {
     icon: Settings,
     label: "Settings",
-    href: "/dashboard/settings",
+    href: "/doctor/settings",
   },
 ];
 

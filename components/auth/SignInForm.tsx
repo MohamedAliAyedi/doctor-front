@@ -31,7 +31,7 @@ export function SignInForm() {
     setTimeout(() => {
       setIsLoading(false);
       // Redirect to dashboard based on user role
-      router.push("/dashboard");
+      router.push("/doctor/dashboard");
     }, 1000);
   };
 

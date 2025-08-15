@@ -52,7 +52,7 @@ export function ConsultationPatientContent() {
   };
 
   const handleReportClick = (id: number) => {
-    router.push(`/consultation/report/${id}`);
+    router.push(`/doctor/consultation/report/${id}`);
   };
 
   const handleSavePrescription = (medications: any[]) => {
