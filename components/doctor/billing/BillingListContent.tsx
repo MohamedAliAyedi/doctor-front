@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { NewBillModal } from "./NewBillModal";
 import {
   Select,
   SelectContent,
@@ -183,6 +184,7 @@ const getStatusBadge = (status: string) => {
 export function BillingListContent() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterValue, setFilterValue] = useState("All bills");
+  const [isNewBillModalOpen, setIsNewBillModalOpen] = useState(false);
 
   return (
     <div className="space-y-6">
@@ -204,7 +206,10 @@ export function BillingListContent() {
             </p>
           </div>
         </div>
-        <Button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2">
+        <Button 
+          onClick={() => setIsNewBillModalOpen(true)}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2"
+        >
           <span>Add a new bill</span>
           <Plus className="w-4 h-4" />
         </Button>
@@ -309,6 +314,12 @@ export function BillingListContent() {
           ))}
         </div>
       </div>
+
+      {/* New Bill Modal */}
+      <NewBillModal
+        isOpen={isNewBillModalOpen}
+        onClose={() => setIsNewBillModalOpen(false)}
+      />
     </div>
   );
 }
