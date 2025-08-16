@@ -1,7 +1,7 @@
 "use client";
 
 import { DashboardLayout } from "@/components/doctor/dashboard/DashboardLayout";
-import { PatientProfileContent } from "@/components/patient-profile/PatientProfileContent";
+import { PatientProfileContent } from "@/components/doctor/patient-profile/PatientProfileContent";
 
 export default function PatientProfilePage() {
   return (

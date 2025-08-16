@@ -1,6 +1,6 @@
 "use client";
 
-import { ConsultationPatientContent } from "@/components/consultation/ConsultationPatientContent";
+import { ConsultationPatientContent } from "@/components/doctor/consultation/ConsultationPatientContent";
 import { DashboardLayout } from "@/components/doctor/dashboard/DashboardLayout";
 
 export default function ConsultationPatientPage() {
