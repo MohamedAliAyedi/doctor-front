@@ -42,11 +42,6 @@ const menuItems: MenuItem[] = [
     active: true,
   },
   {
-    icon: MessageSquare,
-    label: "History consultation",
-    href: "/doctor/dashboard/consultation-history",
-  },
-  {
     icon: Users,
     label: "Patients",
     subItems: [
@@ -76,6 +71,11 @@ const menuItems: MenuItem[] = [
     icon: Calendar,
     label: "Appointments",
     href: "/doctor/appointments",
+  },
+  {
+    icon: MessageSquare,
+    label: "History consultation",
+    href: "/doctor/dashboard/consultation-history",
   },
   {
     icon: UserCheck,

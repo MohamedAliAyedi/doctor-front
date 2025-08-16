@@ -1,7 +1,7 @@
 "use client";
 
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
-import { AppointmentsContent } from "@/components/appointments/AppointmentsContent";
+import { DashboardLayout } from "@/components/doctor/dashboard/DashboardLayout";
+import { AppointmentsContent } from "@/components/doctor/appointments/AppointmentsContent";
 
 export default function AppointmentsPage() {
   return (

@@ -1,4 +1,4 @@
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
+import { DashboardLayout } from "@/components/doctor/dashboard/DashboardLayout";
 import { WelcomeMessage } from "@/components/dashboard/WelcomeMessage";
 import { StatsCards } from "@/components/dashboard/StatsCards";
 import { PatientStatistic } from "@/components/dashboard/PatientStatistic";

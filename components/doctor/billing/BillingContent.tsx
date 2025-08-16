@@ -175,7 +175,6 @@ export function BillingContent() {
         <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
           <SelectTrigger className="w-32 border-gray-200 rounded-lg">
             <SelectValue />
-            <ChevronDown className="w-4 h-4 ml-2" />
           </SelectTrigger>
           <SelectContent className="bg-white border border-gray-200 rounded-lg shadow-lg">
             <SelectItem value="Monthly">Monthly</SelectItem>
